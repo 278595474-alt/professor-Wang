@@ -2,77 +2,191 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>王教授实验室 | Professor Wang Lab</title>
+  <title>智能电网实验室 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      background: #f6f7fb;
-      color: #222;
+    body{
+      font-family:"Segoe UI", Arial, sans-serif;
+      margin:0;
+      background:#f6f7fb;
+      color:#222;
     }
-    header {
-      background: #1f3c88;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+    header{
+      background:#1f3c88;
+      color:#fff;
+      padding:40px 20px;
+      text-align:center;
     }
-    nav {
-      background: #162d66;
-      padding: 10px;
-      text-align: center;
+    nav{
+      background:#162d66;
+      padding:10px;
+      text-align:center;
     }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+    nav a{
+      color:#fff;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:bold;
     }
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    section{
+      max-width:1000px;
+      margin:40px auto;
+      background:#fff;
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: #1f3c88;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 8px;
+    h2{
+      color:#1f3c88;
+      border-bottom:2px solid #eee;
+      padding-bottom:8px;
+      margin-top:0;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #666;
+    footer{
+      text-align:center;
+      padding:20px;
+      color:#666;
     }
+
+    /* ===== 师资队伍：一人一个卡片 ===== */
+    .people-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:16px;
+      margin-top:14px;
+    }
+    .person-link{ text-decoration:none; color:inherit; display:block; }
+    .person-card{
+      background:#fff;
+      border:1px solid #e7eefc;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+      transition:transform .15s ease, box-shadow .15s ease;
+      text-align:center;
+    }
+    .person-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 22px rgba(0,0,0,.10);
+    }
+    .person-avatar{
+      width:110px; height:110px;
+      border-radius:50%;
+      object-fit:cover;
+      border:1px solid #eee;
+      background:#f7f7f7;
+      display:block;
+      margin:0 auto 12px auto;
+    }
+    .person-name{
+      margin:0;
+      font-size:16px;
+      font-weight:700;
+      color:#1f3c88;
+    }
+    .person-title{
+      margin:6px 0 0 0;
+      font-size:13px;
+      color:#444;
+    }
+
+    /* ===== 研究成果 ===== */
+    .result-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:14px;
+    }
+    @media (max-width: 900px){
+      .result-grid{ grid-template-columns:1fr; }
+    }
+    .result-card{
+      border:1px solid #e7eefc;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+      background:#fff;
+    }
+    .result-card h3{
+      margin:0 0 10px 0;
+      color:#1f3c88;
+      font-size:16px;
+    }
+    .result-card ol{
+      margin:0;
+      padding-left:18px;
+      color:#333;
+      line-height:1.6;
+      font-size:14px;
+    }
+    .more{
+      display:inline-block;
+      margin-top:10px;
+      color:#1f3c88;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .more:hover{ text-decoration:underline; }
+    .muted{ color:#666; font-size:13px; }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>王教授实验室</h1>
+  <h1>智能电网实验室</h1>
   <p>Professor Wang's Laboratory</p>
   <p>电气与自动化工程学院 · XXX大学</p>
 </header>
 
 <nav>
   <a href="#about">实验室简介</a>
+  <a href="#people">师资队伍</a>
   <a href="#research">研究方向</a>
-  <a href="#people">团队成员</a>
-  <a href="#publications">论文成果</a>
+  <a href="#results">研究成果</a>
   <a href="#contact">联系方式</a>
 </nav>
 
 <section id="about">
   <h2>实验室简介</h2>
   <p>
-    王教授实验室隶属于XXX大学电气与自动化工程学院，主要从事智能控制系统、
-    能源系统建模与优化、神经形态计算与忆阻器器件等方向的研究。
+  本实验室依托 X大学 / X单位 建设和运行，于 20XX年X月 通过建设论证，并于 20XX年X月 通过正式验收。实验室定位于围绕国家重大工程需求和科技前沿，面向 X领域/行业关键问题，聚焦 X系统安全、经济与智能运行 等核心挑战，在 X方向1、X方向2、X方向3、X方向4 等方面开展应用基础研究，服务于 国家战略需求与行业发展目标。
+
+实验室拥有一支高水平的创新研究队伍。目前有固定研究人员 X人以上，其中包括国家级高层次人才 X人，省部级人才计划入选者 X人，行业领军人才 X人，青年优秀人才 X人，形成了结构合理、梯队完善、富有活力的科研团队。
+
+围绕 X领域关键理论与核心技术，实验室取得了一批具有代表性的原创性科研成果。近年来，承担国家级与省部级科研项目 X项以上，获得国家级科技奖励 X项，省部级科技奖励 X项。近五年科研经费到账 X亿元以上，发表 SCI 论文 X篇以上，EI 论文 X篇以上，出版学术专著 X部，授权发明专利 X项以上。部分科研成果已实现产业化应用，在 X行业/场景 中取得良好经济与社会效益。
+
+实验室与 X行业龙头企业（如：X公司、X集团等） 建立了长期稳定的产学研合作关系，同时与来自 X个国家或地区 的多所知名高校和科研机构保持密切合作，在人才培养、联合研究与国际交流等方面形成了良好机制。
   </p>
 </section>
 
+<!-- ① 师资队伍（原团队成员） -->
+<section id="people">
+  <h2>师资队伍</h2>
+
+  <div class="people-grid">
+    <a class="person-link" href="people/wang.html">
+      <div class="person-card">
+        <img class="person-avatar" src="assets/屏幕截图 2026-01-25 220552.jpg" alt="王建东">
+        <p class="person-name">王建东</p>
+        <p class="person-title">教授 / 博士生导师</p>
+      </div>
+    </a>
+
+    <a class="person-link" href="people/zhangchao.html">
+      <div class="person-card">
+        <img class="person-avatar" src="assets/张超.jpg" alt="张超">
+        <p class="person-name">张超</p>
+        <p class="person-title">教授 / 硕士生导师</p>
+      </div>
+    </a>
+  </div>
+
+  <p class="muted" style="margin-top:12px;">点击卡片进入教师个人主页。</p>
+</section>
+
+<!-- ② 研究方向（和师资队伍换位置） -->
 <section id="research">
   <h2>研究方向</h2>
 
@@ -90,61 +204,40 @@
     <li>工业大数据分析</li>
   </ul>
 
-  <p style="color:#666; margin-top:10px;">
-    典型应用：发电、输配电、用电等电力工业关键环节。
-  </p>
+  <p class="muted" style="margin-top:10px;">典型应用：发电、输配电、用电等电力工业关键环节。</p>
 </section>
 
+<!-- ③ 研究成果（原论文成果，拆分为论文/专利，并提供详情页） -->
+<section id="results">
+  <h2>研究成果</h2>
 
+  <div class="result-grid">
 
+    <div class="result-card">
+      <h3>论文（部分）</h3>
+      <ol>
+        <li>Wang et al., Neural-inspired Memristive Control Systems, IEEE TNNLS, 2024</li>
+        <li>Wang et al., Predictive Heating Control via Data-driven Models, Energy, 2023</li>
+        <li>Zhang et al., Distribution Network Fault Diagnosis via Data-driven Methods, 2022</li>
+      </ol>
+      <a class="more" href="results/papers.html">查看详细信息 →</a>
+    </div>
 
-<section id="people">
-  <h2>团队成员</h2>
+    <div class="result-card">
+      <h3>专利（部分）</h3>
+      <ol>
+        <li>一种基于数据驱动的控制性能评估方法（发明专利）</li>
+        <li>一种电力系统异常检测与告警抑制方法（发明专利）</li>
+        <li>一种配电网故障定位与诊断装置（发明专利）</li>
+      </ol>
+      <a class="more" href="results/patents.html">查看详细信息 →</a>
+    </div>
 
-  <div class="people-grid">
-    <a class="person-link" href="people/wang.html">
-      <div class="person-card">
-        <img class="person-avatar" src="assets/屏幕截图 2026-01-25 220552.jpg" alt="王教授">
-        <div class="person-meta">
-          <h3>王建东 教授 博士生导师</h3>
-          <p>山东科技大学 电气与自动化工程学院</p>
-          <p>研究方向：系统辨识｜性能评价｜异常监控｜优化调度｜工业大数据</p>
-          <div class="person-tags">
-            <span class="tag">动态系统辨识</span>
-            <span class="tag">控制优化</span>
-            <span class="tag">异常监控</span>
-          </div>
-          <p style="margin-top:10px;color:#1f3c88;">点击查看详细介绍 →</p>
-        </div>
-      </div>
-    </a>
-       <a class="person-link" href="people/wang.html">
-      <div class="person-card">
-        <img class="person-avatar" src="assets/张超.jpg" alt="王教授">
-        <div class="person-meta">
-          <h3>张超 教授 </h3>
-          <p>山东科技大学 电气与自动化工程学院</p>
-          <p>研究方向：配电网故障诊断｜电力系统运行控制</p>
-          <div class="person-tags">
-            <span class="tag">配电网故障诊断</span>
-            <span class="tag">电力系统运行控制</span>
-          </div>
-          <p style="margin-top:10px;color:#1f3c88;">点击查看详细介绍 →</p>
-        </div>
-      </div>
-    </a>
-    
   </div>
-</section>
 
-
-
-<section id="publications">
-  <h2>论文成果</h2>
-  <ol>
-    <li>Wang et al., Neural-inspired Memristive Control Systems, IEEE TNNLS, 2024</li>
-    <li>Wang et al., Predictive Heating Control via Data-driven Models, Energy, 2023</li>
-  </ol>
+  <p class="muted" style="margin-top:12px;">
+    提示：你后续只需要把 results/papers.html 和 results/patents.html 里按年份追加条目即可。
+  </p>
 </section>
 
 <section id="contact">
@@ -159,64 +252,3 @@
 
 </body>
 </html>
-/* 研究方向里的视频容器：自适应，不强行 16:9，尽量减少黑边 */
-.video-wrap{
-  width: 100%;
-  max-width: 1000px;
-  margin-top: 10px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: transparent;   /* 不要黑底 */
-  border: 1px solid #eee;
-}
-
-/* 关键：让视频占满宽度，同时保持比例 */
-.video-fit{
-  width: 100%;
-  height: auto;              /* 按比例自适应 */
-  display: block;
-  max-height: 520px;         /* 你可以改成 420/600 等 */
-  background: #000;          /* 真遇到黑边也至少干净 */
-}
-/* ===== People cards ===== */
-.people-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap:16px;
-  margin-top:12px;
-}
-.person-link{ text-decoration:none; color:inherit; }
-.person-card{
-  background:#fff;
-  border:1px solid #e7eefc;
-  border-radius:14px;
-  padding:14px;
-  box-shadow:0 6px 16px rgba(0,0,0,.06);
-  transition: transform .15s ease, box-shadow .15s ease;
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
-}
-.person-card:hover{
-  transform: translateY(-2px);
-  box-shadow:0 10px 22px rgba(0,0,0,.10);
-}
-.person-avatar{
-  width:92px; height:120px;
-  object-fit:cover;
-  border-radius:12px;
-  border:1px solid #eee;
-  flex:0 0 auto;
-  background:#f7f7f7;
-}
-.person-meta h3{ margin:0; font-size:16px; }
-.person-meta p{ margin:6px 0 0 0; color:#444; font-size:13px; line-height:1.35; }
-.person-tags{ margin-top:8px; display:flex; flex-wrap:wrap; gap:6px; }
-.tag{
-  font-size:12px;
-  padding:3px 8px;
-  border-radius:999px;
-  background:#eef5ff;
-  color:#1f3c88;
-  border:1px solid #d7e8ff;
-}
