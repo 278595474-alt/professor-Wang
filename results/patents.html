@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>专利 | 研究成果</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root{
+      --blue:#1f3c88; --bg:#f6f7fb; --card:#fff; --line:#e7eefc; --text:#222; --muted:#666;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);}
+    a{color:var(--blue);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    header{background:linear-gradient(180deg,#2b7bd7,#1f3c88);color:#fff;padding:22px 16px;}
+    header .wrap{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    header h1{margin:0;font-size:20px;}
+    header .nav a{color:#fff;text-decoration:underline;font-size:14px;margin-left:12px;}
+
+    main{max-width:1100px;margin:16px auto;padding:0 16px 30px;}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+    }
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+    @media(max-width:900px){.grid{grid-template-columns:1fr;}}
+    .box{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      background:#fff;
+    }
+    .box h2{margin:0 0 8px 0;color:var(--blue);font-size:16px;}
+    .list{margin:0;padding-left:18px;line-height:1.75;}
+    .meta{color:var(--muted);font-size:13px;}
+    .item{margin:8px 0;}
+    .pill{
+      display:inline-block;font-size:12px;padding:4px 10px;border-radius:999px;
+      background:#eef5ff;border:1px solid #d7e8ff;color:var(--blue);margin-right:6px;
+    }
+    footer{text-align:center;color:var(--muted);padding:18px 0;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>研究成果 · 专利</h1>
+    <div class="nav">
+      <a href="../index.html#results">← 返回主页</a>
+      <a href="../index.html">首页</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <div class="meta">建议将“发明专利 / 实用新型 / 软件著作权”分栏维护，条目中可加入授权号/公开号/年份。</div>
+
+    <div class="grid">
+      <div class="box">
+        <h2>发明专利</h2>
+        <ol class="list">
+          <li class="item">
+            <span class="pill">发明</span>
+            一种基于数据驱动的控制性能评估方法
+            <div class="meta">专利号：CNXXXXXXXXX · 年份：20XX · 状态：授权/公开</div>
+          </li>
+          <li class="item">
+            <span class="pill">发明</span>
+            一种电力系统异常检测与告警抑制方法
+            <div class="meta">专利号：CNXXXXXXXXX · 年份：20XX · 状态：授权/公开</div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="box">
+        <h2>实用新型 / 其他</h2>
+        <ol class="list">
+          <li class="item">
+            <span class="pill">实用新型</span>
+            一种配电网故障定位与诊断装置
+            <div class="meta">专利号：CNXXXXXXXXX · 年份：20XX · 状态：授权/公开</div>
+          </li>
+          <li class="item">
+            <span class="pill">软著</span>
+            X系统软件（示例）
+            <div class="meta">登记号：XXXXXXXX · 年份：20XX</div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <p class="meta" style="margin-top:14px;">
+      条目模板：<br>
+      &lt;li class="item"&gt;&lt;span class="pill"&gt;类型&lt;/span&gt; 专利名称
+      &lt;div class="meta"&gt;专利号/年份/状态&lt;/div&gt;&lt;/li&gt;
+    </p>
+  </section>
+
+  <footer>© 2026 Professor Wang Lab</footer>
+</main>
+
+</body>
+</html>
