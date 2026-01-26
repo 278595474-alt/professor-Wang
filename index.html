@@ -129,6 +129,22 @@
     }
     .more:hover{ text-decoration:underline; }
     .muted{ color:#666; font-size:13px; }
+    /* ===== 实验室新闻 ===== */
+.news-list{margin:12px 0 0 0; padding-left:18px; color:#333; line-height:1.75; font-size:14px;}
+.news-list li{margin:8px 0;}
+.news-date{
+  display:inline-block;
+  font-size:12px;
+  padding:2px 8px;
+  border-radius:999px;
+  background:#eef5ff;
+  border:1px solid #d7e8ff;
+  color:#1f3c88;
+  margin-right:8px;
+}
+.news-link{color:#1f3c88; font-weight:700;}
+.news-link:hover{text-decoration:underline;}
+
   </style>
 </head>
 
@@ -142,11 +158,13 @@
 
 <nav>
   <a href="#about">实验室简介</a>
+  <a href="#news">实验室新闻</a>
   <a href="#people">师资队伍</a>
   <a href="#research">研究方向</a>
   <a href="#results">研究成果</a>
   <a href="#contact">联系方式</a>
 </nav>
+
 
 <section id="about">
   <h2>实验室简介</h2>
@@ -167,6 +185,34 @@
   <p>
     实验室与X行业龙头企业（如：X公司、X集团等）建立长期稳定产学研合作关系，
     同时与来自X个国家或地区的多所知名高校和科研机构保持合作交流。
+  </p>
+</section>
+<!-- 0 实验室新闻（插在实验室简介与师资队伍之间） -->
+<section id="news">
+  <h2>实验室新闻</h2>
+
+  <ul class="news-list">
+    <li>
+      <span class="news-date">News 01</span>
+      <a class="news-link" href="news/iman-visit.html">来自伊朗伊斯法罕理工大学的 Iman 教授来到实验室开展了为期一个月的交流</a>
+    </li>
+
+    <li>
+      <span class="news-date">News 02</span>
+      <a class="news-link" href="news/xing-xiaotong-phd.html">实验室博士生邢晓彤通过博士论文答辩并被推选参评优秀博士论文</a>
+    </li>
+
+    <li>
+      <span class="news-date">News 03</span>
+      <a class="news-link" href="https://mp.weixin.qq.com/s/eNOPKO98SxnNwGs1e0q5Lw" target="_blank" rel="noopener">
+        实验室博士生魏梦瑶代表实验室在 2025 中国自动化大会“工业报警监控的智能化技术及应用”平行会议上做学术报告：
+        基于正常工作区和动态模型的异常状况预警方法（外部链接）
+      </a>
+    </li>
+  </ul>
+
+  <p class="muted" style="margin-top:10px;">
+    提示：news/ 目录下每条新闻一个 html 页面，后续可继续追加。
   </p>
 </section>
 
