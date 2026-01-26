@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>学术专著 | 研究成果</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root{
+      --blue:#1f3c88;
+      --bg:#f6f7fb;
+      --card:#fff;
+      --line:#e7eefc;
+      --text:#222;
+      --muted:#666;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);}
+    a{color:var(--blue);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    header{
+      background:linear-gradient(180deg,#2b7bd7,#1f3c88);
+      color:#fff;
+      padding:22px 16px;
+    }
+    header .wrap{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    header h1{margin:0;font-size:20px;}
+    header .nav a{color:#fff;text-decoration:underline;font-size:14px;margin-left:12px;}
+
+    main{max-width:1100px;margin:16px auto;padding:0 16px 30px;}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+    }
+    .hint{color:var(--muted);font-size:13px;margin:10px 0 0 0;}
+    .list{
+      margin:0;
+      padding-left:18px;
+      line-height:1.75;
+    }
+    .meta{color:var(--muted);font-size:13px;}
+    .item{margin:10px 0;}
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      padding:3px 9px;
+      border-radius:999px;
+      background:#eef5ff;
+      border:1px solid #d7e8ff;
+      color:var(--blue);
+      margin-right:6px;
+    }
+    footer{text-align:center;color:var(--muted);padding:18px 0;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>研究成果 · 学术专著</h1>
+    <div class="nav">
+      <a href="../index.html#results">← 返回主页</a>
+      <a href="../index.html">首页</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <p class="meta">说明：这里按时间/主题维护专著条目。你后续只需复制一行“条目模板”追加即可。</p>
+
+    <ol class="list">
+      <li class="item">
+        <span class="tag">中文专著</span>
+        <strong>《智能工业报警系统》</strong>
+        <div class="meta">作者：X；出版社：X；出版时间：20XX；ISBN：XXXXXXXX</div>
+        <div class="meta">简介：用 1–2 句话写该书内容与特色（可选）。</div>
+      </li>
+
+      <li class="item">
+        <span class="tag">英文专著</span>
+        <strong>Intelligent Industrial Alarm Systems: Advanced Analysis and Design Methods</strong>
+        <div class="meta">Authors: X; Publisher: X; Year: 20XX; ISBN: XXXXXXXX</div>
+        <div class="meta">Brief: 1–2 sentences about scope and contributions (optional).</div>
+      </li>
+    </ol>
+
+    <p class="hint">条目模板（复制粘贴后改内容）：<br>
+      <span class="meta">
+        &lt;li class="item"&gt;&lt;span class="tag"&gt;类型&lt;/span&gt; &lt;strong&gt;书名&lt;/strong&gt;
+        &lt;div class="meta"&gt;作者/出版社/年份/ISBN&lt;/div&gt;
+        &lt;div class="meta"&gt;简介（可选）&lt;/div&gt;&lt;/li&gt;
+      </span>
+    </p>
+  </section>
+
+  <footer>© 2026 Professor Wang Lab</footer>
+</main>
+
+</body>
+</html>
