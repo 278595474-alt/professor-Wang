@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>扬子江老师 | 个人主页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root{
+      --blue:#1f3c88;
+      --bg:#f6f7fb;
+      --card:#fff;
+      --line:#e7eefc;
+      --text:#222;
+      --muted:#666;
+    }
+    *{box-sizing:border-box;}
+    body{font-family:"Segoe UI", Arial, sans-serif; margin:0; background:var(--bg); color:var(--text);}
+
+    header{background:var(--blue); color:#fff; padding:28px 16px;}
+    header .wrap{max-width:1000px; margin:0 auto; display:flex; gap:16px; align-items:center;}
+    header img{
+      width:90px; height:90px; border-radius:50%;
+      object-fit:cover; border:2px solid rgba(255,255,255,.5);
+      background:#fff;
+    }
+    h1{margin:0; font-size:22px;}
+    .sub{opacity:.95; margin-top:4px; font-size:14px;}
+    .back{display:inline-block; margin-top:10px; color:#fff; text-decoration:underline; font-size:14px;}
+
+    main{max-width:1000px; margin:24px auto; padding:0 16px;}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 4px 10px rgba(0,0,0,.08);
+      margin-bottom:16px;
+    }
+    h2{margin:0 0 10px 0; color:var(--blue);}
+    p{margin:0 0 10px 0; line-height:1.75; color:#333;}
+    ul{margin:0; padding-left:18px; color:#333; line-height:1.8;}
+    .grid{display:grid; grid-template-columns:1fr; gap:12px;}
+    @media (min-width: 900px){ .grid{grid-template-columns:1fr 1fr;} }
+
+    .media img{width:100%; border-radius:10px; border:1px solid #eee; background:#f7f7f7;}
+    .video{position:relative; padding-top:56.25%; border-radius:10px; overflow:hidden; background:#000;}
+    .video iframe, .video video{position:absolute; inset:0; width:100%; height:100%;}
+
+    footer{text-align:center; color:var(--muted); padding:20px;}
+    .muted{color:var(--muted); font-size:13px;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <!-- 上传扬子江老师照片到 assets 后，把下面 src 改成 ../assets/扬子江.jpg -->
+    <img src="../assets/yang_placeholder.jpg" alt="扬子江">
+    <div>
+      <h1>扬子江 老师</h1>
+      <div class="sub">讲师 / 硕士生导师 · 山东科技大学 电气与自动化工程学院</div>
+      <a class="back" href="../index.html#people">← 返回师资队伍</a>
+      <div class="sub muted" style="margin-top:8px;">
+        学校信息参考：<a href="https://xindian.sdust.edu.cn/info/1045/5324.htm" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">官网页面</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <h2>个人简介</h2>
+    <p>
+      （请把这里替换成杨子江老师的个人简介：教育经历、工作经历、研究方向概述等。）
+    </p>
+    <p class="muted">提示：你可以直接从官网页面复制文字放这里，再做适当分段。</p>
+  </section>
+
+  <section class="card">
+    <h2>研究方向</h2>
+    <ul>
+      <li>工业过程异常监测</li>
+      <li>发电系统性能评价</li>
+      <li>（按官网补充/修改）</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>代表性成果</h2>
+    <p class="muted">（可选）这里可以放几条代表性论文/项目/专利，或者链接到“研究成果”页面。</p>
+    <ul>
+      <li>论文：XXXX, 20XX</li>
+      <li>项目：XXXX, 20XX</li>
+      <li>专利：XXXX, 20XX</li>
+    </ul>
+  </section>
+
+  <section class="card media">
+    <h2>图片与视频（可选）</h2>
+    <div class="grid">
+      <div>
+        <img src="../assets/placeholder_lab.jpg" alt="图片占位">
+        <p class="muted" style="margin-top:8px;">这里可放荣誉证书、实验平台、现场照片等。</p>
+      </div>
+      <div>
+        <div class="video">
+          <!-- 如需本地视频，把下面改成 <video controls> 并指向 ../assets/videos/xxx.mp4 -->
+          <iframe src="about:blank" title="视频占位"></iframe>
+        </div>
+        <p class="muted" style="margin-top:8px;">这里可放介绍视频（本地 mp4 / 或后续替换）。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>联系方式</h2>
+    <p>Email：xxxxxxxx@sdust.edu.cn（按官网替换）</p>
+    <p>电话：1XXXXXXXXXX（按官网替换）</p>
+  </section>
+</main>
+
+<footer>© 2026 Professor Wang Lab</footer>
+</body>
+</html>
