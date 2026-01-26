@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>张超教授 | 个人主页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root{
+      --blue:#1f3c88;
+      --bg:#f6f7fb;
+      --card:#fff;
+      --line:#e7eefc;
+      --text:#222;
+      --muted:#666;
+    }
+    *{box-sizing:border-box;}
+    body{font-family:"Segoe UI", Arial, sans-serif;margin:0;background:var(--bg);color:var(--text);}
+    a{color:var(--blue);}
+
+    header{
+      background:#1f3c88;
+      color:#fff;
+      padding:28px 16px;
+    }
+    header .wrap{
+      max-width:1000px;
+      margin:0 auto;
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    header img{
+      width:90px;height:90px;border-radius:50%;
+      object-fit:cover;
+      border:2px solid rgba(255,255,255,.5);
+      background:#fff;
+    }
+    h1{margin:0;font-size:26px;line-height:1.2;}
+    header .sub{opacity:.95;margin-top:6px;font-size:14px;}
+    .back{display:inline-block;margin-top:10px;color:#fff;text-decoration:underline;font-size:14px;}
+
+    main{max-width:1000px;margin:24px auto;padding:0 16px;}
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 4px 10px rgba(0,0,0,.08);
+      margin-bottom:16px;
+      border:1px solid var(--line);
+    }
+    h2{margin:0 0 10px 0;color:var(--blue);font-size:18px;}
+    p{margin:0;color:#333;line-height:1.75;font-size:14px;}
+    ul{margin:8px 0 0 18px;color:#333;line-height:1.75;font-size:14px;}
+    li{margin:4px 0;}
+
+    /* 标签 */
+    .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;}
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:#eef5ff;
+      border:1px solid #d7e8ff;
+      color:var(--blue);
+    }
+
+    /* 荣誉：文字全宽 + 证书图片区 */
+    .honor-text{line-height:1.75;margin:0;}
+    .cert-area{margin-top:14px;}
+    .cert-title{font-size:14px;color:#666;margin:0 0 10px 0;}
+    .cert-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:12px;
+    }
+    .cert-item{
+      border:1px dashed #cfd8ef;
+      border-radius:10px;
+      background:#f9fbff;
+      overflow:hidden;
+      min-height:160px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#8892a8;
+      font-size:13px;
+      text-align:center;
+      padding:10px;
+    }
+    .cert-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    footer{text-align:center;color:#666;padding:20px;font-size:13px;}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <!-- 把头像放到 assets/zhangchao.jpg（建议），或改成你实际上传的文件名 -->
+    <img src="../assets/zhangchao.jpg" alt="张超教授" />
+    <div>
+      <h1>张超 教授</h1>
+      <div class="sub">山东科技大学 · 电气与自动化工程学院（青岛校区）</div>
+      <a class="back" href="../index.html#people">← 返回团队成员</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <h2>个人简介</h2>
+    <p>
+      张超，男，中共党员，博士、电气工程系副主任、教授、硕士生导师。2014年12月于中国矿业大学信息与电气工程学院博士研究生毕业，获工学博士学位。
+      担任山东电机工程学会人工智能专委会副主任委员、安全技术专委会委员。入选首批青岛市科技创新高层次人才团队，山东省高等学校青年创新团队。
+      主持国家自然科学基金、山东省自然科学基金、青岛市自然科学基金、青岛市科技计划、中国博士后自然科学基金等多个科研项目，同时主持企业20余项横向项目。
+        在IEEE Transactions on Power Systems等学术期刊发表SCI论文20余篇（中科院一、二区10余篇），高被引论文1篇；授权专利10余项、软件著作权3项，参编国家标准1项。
+      以第一完成人身份获得山东省科技进步二等奖、中国安全生产协会安全科技进步二等奖、青岛市青年科技奖，获中国产学研合作创新成果二等奖；
+      并获山东电机工程学会“五四”优秀青年科技工作者、先进个人、山东科技大学优秀青年科技工作者等荣誉称号。
+    </p>
+
+    <div class="tags" aria-label="研究关键词">
+      <span class="tag">配电网故障诊断</span>
+      <span class="tag">电力电子技术应用</span>
+      <span class="tag">电能质量检测与控制</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>研究方向</h2>
+    <ul>
+      <li>配电网故障诊断</li>
+      <li>电力电子技术应用</li>
+    </ul>
+    <p style="margin-top:10px;color:#666;">
+      （后续你也可以在这里补充：论文方向、招生方向、实验平台等）
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>所获荣誉</h2>
+    <p class="honor-text">
+      代表性成果与荣誉可在此集中展示（例如：科技奖励、人才项目、重要学术任职等）。
+      下方预留证书/获奖证明图片区域，上传图片后按示例替换即可。
+    </p>
+
+    <div class="cert-area">
+      <p class="cert-title">荣誉证书 / 奖励证明（图片展示区）</p>
+      <div class="cert-grid">
+        <div class="cert-item">证书图片位 1<br/>（替换成 &lt;img&gt;）</div>
+        <div class="cert-item">证书图片位 2</div>
+        <div class="cert-item">证书图片位 3</div>
+        <div class="cert-item">证书图片位 4</div>
+      </div>
+      <!-- 示例（上传后使用）：
+      <div class="cert-item">
+        <img src="../assets/certs/award1.jpg" alt="山东省科技进步二等奖证书">
+      </div>
+      -->
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>联系方式</h2>
+    <p>电话：15066211896</p>
+    <p>Email：zhangchao_sdust@163.com</p>
+    <p style="margin-top:8px;color:#666;">所带研究生专业：电气工程、能源动力</p>
+  </section>
+</main>
+
+<footer>© 2026 Professor Wang Lab</footer>
+</body>
+</html>
