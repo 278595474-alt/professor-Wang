@@ -6,13 +6,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root{
-      --blue:#1f3c88; --bg:#f6f7fb; --card:#fff; --line:#e7eefc; --text:#222; --muted:#666;
+      --blue:#1f3c88;
+      --blueDeep:#0e2f78;
+      --bg:#f6f7fb;
+      --card:#fff;
+      --line:#e7eefc;
+      --text:#222;
+      --muted:#666;
+      --sidebarW:240px;
     }
     *{box-sizing:border-box;}
     body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);}
     a{color:var(--blue);text-decoration:none;}
     a:hover{text-decoration:underline;}
 
+    /* ===== 左侧固定导航（frame）===== */
+    .sidebar{
+      position:fixed;
+      top:0; left:0;
+      width:var(--sidebarW);
+      height:100vh;
+      background:var(--blueDeep);
+      color:#fff;
+      padding:16px 12px;
+      border-right:1px solid rgba(255,255,255,.12);
+      overflow-y:auto;
+    }
+    .brand{
+      display:flex;gap:10px;align-items:center;
+      padding:10px 8px 14px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+      margin-bottom:14px;
+    }
+    .brand .avatar{
+      width:54px;height:54px;border-radius:10px;
+      background:rgba(255,255,255,.18);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;letter-spacing:.5px;
+    }
+    .brand h1{margin:0;font-size:16px;line-height:1.2;}
+    .brand p{margin:4px 0 0;font-size:12px;opacity:.9;line-height:1.3;}
+
+    .navSide{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+    .navSide a{
+      display:block;
+      padding:10px 10px;
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:8px;
+      color:#fff;
+      background:rgba(255,255,255,.08);
+      font-weight:800;
+      font-size:13px;
+      text-align:center;
+      transition:.15s ease;
+    }
+    .navSide a:hover{background:rgba(255,255,255,.16);text-decoration:none;}
+    .navSide a.active{background:#fff;color:var(--blueDeep);border-color:#fff;}
+
+    /* ===== 右侧内容整体让位 ===== */
+    .main{
+      margin-left:var(--sidebarW);
+      min-height:100vh;
+    }
+
+    /* ===== 下面开始：你原来的样式（内容一字不删）===== */
     header{background:linear-gradient(180deg,#2b7bd7,#1f3c88);color:#fff;padding:22px 16px;}
     header .wrap{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;}
     header h1{margin:0;font-size:20px;}
@@ -43,67 +100,96 @@
       background:#eef5ff;border:1px solid #d7e8ff;color:var(--blue);margin-right:6px;
     }
     footer{text-align:center;color:var(--muted);padding:18px 0;}
+
+    /* 小屏适配 */
+    @media (max-width: 980px){
+      :root{ --sidebarW:230px; }
+      .sidebar{width:var(--sidebarW);}
+      .main{margin-left:var(--sidebarW);}
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <h1>研究成果 · 专利</h1>
-    <div class="nav">
-      <a href="../index.html#results">← 返回主页</a>
-      <a href="../index.html">首页</a>
+  <!-- 左侧固定导航栏（不会消失） -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="avatar">LAB</div>
+      <div>
+        <h1>智能电网实验室</h1>
+      </div>
     </div>
+
+    <nav class="navSide">
+      <a href="../index.html">实验室简介</a>
+      <a href="../news.html">实验室新闻</a>
+      <a href="../people.html">师资队伍</a>
+      <a href="../research.html">研究方向</a>
+      <a class="active" href="../results.html">研究成果</a>
+      <a href="../contact.html">联系方式</a>
+    </nav>
+  </aside>
+
+  <!-- 右侧内容（你原内容原样保留） -->
+  <div class="main">
+
+    <header>
+      <div class="wrap">
+        <h1>研究成果 · 专利</h1>
+        <div class="nav">
+          <a href="../results.html">← 返回研究成果</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="meta">建议将“发明专利 / 实用新型 / 软件著作权”分栏维护，条目中可加入授权号/公开号/年份。</div>
+
+        <div class="grid">
+          <div class="box">
+            <h2>发明专利</h2>
+            <ol class="list">
+              <li class="item">
+                <span class="pill">发明</span>
+                一种基于数据驱动的控制性能评估方法
+                <div class="meta">专利号：CNXXXXXXXXX · 年份：20XX · 状态：授权/公开</div>
+              </li>
+              <li class="item">
+                <span class="pill">发明</span>
+                一种电力系统异常检测与告警抑制方法
+                <div class="meta">专利号：CNXXXXXXXXX · 年份：20XX · 状态：授权/公开</div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="box">
+            <h2>实用新型 / 其他</h2>
+            <ol class="list">
+              <li class="item">
+                <span class="pill">实用新型</span>
+                一种配电网故障定位与诊断装置
+                <div class="meta">专利号：CNXXXXXXXXX · 年份：20XX · 状态：授权/公开</div>
+              </li>
+              <li class="item">
+                <span class="pill">软著</span>
+                X系统软件（示例）
+                <div class="meta">登记号：XXXXXXXX · 年份：20XX</div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <p class="meta" style="margin-top:14px;">
+          条目模板：<br>
+          &lt;li class="item"&gt;&lt;span class="pill"&gt;类型&lt;/span&gt; 专利名称
+          &lt;div class="meta"&gt;专利号/年份/状态&lt;/div&gt;&lt;/li&gt;
+        </p>
+      </section>
+
+      <footer>© 2026 Professor Wang Lab</footer>
+    </main>
+
   </div>
-</header>
-
-<main>
-  <section class="card">
-    <div class="meta">建议将“发明专利 / 实用新型 / 软件著作权”分栏维护，条目中可加入授权号/公开号/年份。</div>
-
-    <div class="grid">
-      <div class="box">
-        <h2>发明专利</h2>
-        <ol class="list">
-          <li class="item">
-            <span class="pill">发明</span>
-            一种基于数据驱动的控制性能评估方法
-            <div class="meta">专利号：CNXXXXXXXXX · 年份：20XX · 状态：授权/公开</div>
-          </li>
-          <li class="item">
-            <span class="pill">发明</span>
-            一种电力系统异常检测与告警抑制方法
-            <div class="meta">专利号：CNXXXXXXXXX · 年份：20XX · 状态：授权/公开</div>
-          </li>
-        </ol>
-      </div>
-
-      <div class="box">
-        <h2>实用新型 / 其他</h2>
-        <ol class="list">
-          <li class="item">
-            <span class="pill">实用新型</span>
-            一种配电网故障定位与诊断装置
-            <div class="meta">专利号：CNXXXXXXXXX · 年份：20XX · 状态：授权/公开</div>
-          </li>
-          <li class="item">
-            <span class="pill">软著</span>
-            X系统软件（示例）
-            <div class="meta">登记号：XXXXXXXX · 年份：20XX</div>
-          </li>
-        </ol>
-      </div>
-    </div>
-
-    <p class="meta" style="margin-top:14px;">
-      条目模板：<br>
-      &lt;li class="item"&gt;&lt;span class="pill"&gt;类型&lt;/span&gt; 专利名称
-      &lt;div class="meta"&gt;专利号/年份/状态&lt;/div&gt;&lt;/li&gt;
-    </p>
-  </section>
-
-  <footer>© 2026 Professor Wang Lab</footer>
-</main>
-
 </body>
 </html>
