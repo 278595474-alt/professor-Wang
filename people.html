@@ -15,17 +15,33 @@
       --muted:#666;
       --shadow:0 10px 24px rgba(0,0,0,.08);
       --radius:14px;
+
+      --sidebarW:240px;
+      --gap:18px;
     }
     *{box-sizing:border-box;}
     body{margin:0;font-family:"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:var(--bg);color:var(--text);}
     a{color:var(--blue);text-decoration:none;}
     a:hover{text-decoration:underline;}
 
-    .layout{display:flex;min-height:100vh;}
+    /* ===== 布局：左固定 + 右滚动 ===== */
+    .layout{min-height:100vh;}
+
     .sidebar{
-      width:240px;background:var(--blueDeep);color:#fff;
-      padding:16px 12px;border-right:1px solid rgba(255,255,255,.12);
+      width:var(--sidebarW);
+      background:var(--blueDeep);
+      color:#fff;
+      padding:16px 12px;
+      border-right:1px solid rgba(255,255,255,.12);
+
+      position:fixed;
+      left:0;
+      top:0;
+      height:100vh;
+      overflow-y:auto;
+      z-index:10;
     }
+
     .brand{
       display:flex;gap:10px;align-items:center;
       padding:10px 8px 14px;border-bottom:1px solid rgba(255,255,255,.18);
@@ -49,7 +65,12 @@
     .nav a:hover{background:rgba(255,255,255,.16);text-decoration:none;}
     .nav a.active{background:#fff;color:var(--blueDeep);border-color:#fff;}
 
-    .main{flex:1;padding:18px;}
+    .main{
+      margin-left:var(--sidebarW);
+      padding:var(--gap);
+      min-height:100vh;
+    }
+
     .page{
       max-width:1100px;margin:0 auto;background:var(--card);
       border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
@@ -108,6 +129,16 @@
     }
 
     footer{max-width:1100px;margin:10px auto 0;text-align:center;color:#777;font-size:12px;}
+
+    /* ===== 手机端适配：取消 fixed（否则左侧占满屏） ===== */
+    @media (max-width: 960px){
+      .sidebar{
+        position:static;
+        width:auto;
+        height:auto;
+      }
+      .main{margin-left:0;}
+    }
   </style>
 </head>
 
@@ -120,13 +151,14 @@
           <h1>智能电网实验室</h1>
         </div>
       </div>
+
       <nav class="nav">
-        <a href="index.html">实验室简介</a>
-        <a href="news.html">实验室新闻</a>
-        <a class="active" href="people.html">师资队伍</a>
-        <a href="research.html">研究方向</a>
-        <a href="results.html">研究成果</a>
-        <a href="contact.html">联系方式</a>
+        <a href="./index.html">实验室简介</a>
+        <a href="./news.html">实验室新闻</a>
+        <a class="active" href="./people.html">师资队伍</a>
+        <a href="./research.html">研究方向</a>
+        <a href="./results.html">研究成果</a>
+        <a href="./contact.html">联系方式</a>
       </nav>
     </aside>
 
@@ -138,8 +170,8 @@
         </p>
 
         <div class="grid">
-          <a class="card" href="people/wang.html">
-            <img class="photo" src="assets/屏幕截图 2026-01-25 220552.jpg" alt="王建东">
+          <a class="card" href="./people/wang.html">
+            <img class="photo" src="./assets/屏幕截图 2026-01-25 220552.jpg" alt="王建东">
             <div>
               <p class="name">王建东</p>
               <p class="role">教授 / 博士生导师</p>
@@ -147,8 +179,8 @@
             </div>
           </a>
 
-          <a class="card" href="people/zhangchao.html">
-            <img class="photo" src="assets/张超.jpg" alt="张超">
+          <a class="card" href="./people/zhangchao.html">
+            <img class="photo" src="./assets/张超.jpg" alt="张超">
             <div>
               <p class="name">张超</p>
               <p class="role">教授 / 硕士生导师</p>
@@ -156,8 +188,8 @@
             </div>
           </a>
 
-          <a class="card" href="people/yangzijiang.html">
-            <img class="photo" src="assets/yangzijiang.jpg" alt="扬子江">
+          <a class="card" href="./people/yangzijiang.html">
+            <img class="photo" src="./assets/yangzijiang.jpg" alt="扬子江">
             <div>
               <p class="name">扬子江</p>
               <p class="role">讲师 / 硕士生导师</p>
